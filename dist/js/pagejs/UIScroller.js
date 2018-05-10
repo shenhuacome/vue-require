@@ -1,0 +1,1 @@
+﻿define(["vue"],function(a){new a({el:"#app",data:{},created:function(){},watch:{},computed:{},mounted:function(){},methods:{}})});

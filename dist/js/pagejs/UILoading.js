@@ -1,0 +1,1 @@
+﻿define(["vue"],function(a){new a({el:"#app",data:{},created:function(){},watch:{},computed:{},mounted:function(){},methods:{showloading:function(){var b=this;this.loading.show("加载中");setTimeout(function(){b.loading.close()},2000)}}})});

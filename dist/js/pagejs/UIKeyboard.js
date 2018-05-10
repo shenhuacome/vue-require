@@ -1,0 +1,1 @@
+﻿define(["vue","keyboard"],function(a){new a({el:"#app",data:{},created:function(){},watch:{},computed:{},mounted:function(){},methods:{showKeyboard:function(){this.UIKeyBoard.show({callback:function(b){this.UIKeyBoard.close();this.UIKeyBoard.reset();this.toast.show("值为："+b)}})}}})});

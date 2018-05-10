@@ -1,0 +1,1 @@
+﻿define(["vue"],function(a){new a({el:"#app",data:{sex:0,disabled:true},created:function(){},watch:{sex:function(b){this.toast.show("切换时监听值："+b)}},computed:{},mounted:function(){},methods:{setval:function(){this.sex=1}}})});

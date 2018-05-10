@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>单选</title>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="../../js/require.js" data-main="../../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/hundsun.mobile.ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/ui.min.css" />
+     <link rel="stylesheet" type="text/css" href="demo.css" />
+    <style type="text/css">
+   .value{}
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+       
+
+         <UINavigationBar>
+            <div slot="left">
+                <a href="demo.html" class="back-link" m-role="cell" m-valign="middle" ><i class="back"></i>返回</a>
+            </div>
+            <div slot="title">单选</div>
+        </UINavigationBar>
+
+        <UITableView>
+            <UITableViewItem >
+                <div m-role="cell" m-layout="fit" m-align="right">
+                    
+                     <UIRadio m-value="0"  v-model="sex">男</UIRadio>
+
+                </div>
+               
+            </UITableViewItem>
+
+              <UITableViewItem>
+                <div m-role="cell" m-layout="fit" m-align="right">
+                  <!--disabled为true时禁用-->
+                <UIRadio m-value="1" :disabled="disabled" v-model="sex">女</UIRadio> 
+
+                </div>
+
+            </UITableViewItem>
+
+
+          
+        </UITableView>
+
+        <div m-role="split"></div>
+
+        <UIButton @click="setval"  m-style="style-2">
+                设置单选框值为女
+        </UIButton>
+
+        <div m-role="split"></div>
+        <div m-padding='0 2 0 2' class="value">
+            单选框值:<span>{{sex}}</span><br/>
+        </div>
+      
+    </div>
+</body>
+
+</html>

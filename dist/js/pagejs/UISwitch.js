@@ -1,0 +1,1 @@
+﻿define(["vue"],function(a){new a({el:"#app",data:{ck:false,text:"关闭"},created:function(){},watch:{ck:function(b){this.text=b?"开启":"关闭"}},computed:{},mounted:function(){},methods:{toggle:function(){this.ck=!this.ck}}})});

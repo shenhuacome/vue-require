@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>文本框</title>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="../../js/require.js" data-main="../../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/hundsun.mobile.ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <style type="text/css">
+   .value{}
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+       
+
+         <UINavigationBar>
+            <div slot="left">
+                <a href="demo.html" class="back-link" m-role="cell" m-valign="middle" ><i class="back"></i>返回</a>
+            </div>
+            <div slot="title">文本框</div>
+        </UINavigationBar>
+
+        <UITableView>
+            <UITableViewItem>
+                <UITextField m-layout="fit"  :readonly="readonly"  placeholder="普通文本框"  type="text" v-model="text"></UITextField>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UITextField m-layout="fit" maxlength="11" :readonly="readonly" placeholder="电话文本框" type="tel" v-model="tel"></UITextField>
+            </UITableViewItem>
+
+             <UITableViewItem>
+                <UITextField m-layout="fit" :readonly="readonly" placeholder="数字文本框" type="number" v-model="number"></UITextField>
+            </UITableViewItem>
+
+            <UITableViewItem>
+                <UITextField m-layout="fit" :readonly="readonly" placeholder="密码框" type="password" v-model="password"></UITextField>
+            </UITableViewItem>
+            
+            
+        </UITableView>
+
+        <div m-role="split"></div>
+
+         <UIButton @click="toggle"  m-style="style-2">
+                输入框{{btntext}}
+        </UIButton>
+
+        <div m-role="split"></div>
+        <div m-padding='0 2 0 2' class="value">
+            普通文本框:<span>{{text}}</span><br/>
+            电话文本框:<span>{{tel}}</span><br/>
+            数字文本框:<span>{{number}}</span><br/>
+            密码框:<span>{{password}}</span><br/>
+        </div>
+      
+    </div>
+</body>
+
+</html>

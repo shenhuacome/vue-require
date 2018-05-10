@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>首页</title>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="../js/require.js" data-main="../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/hundsun.mobile.ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/ui.min.css" />
+    <style type="text/css">
+    #banner {
+        height: 4.14rem;
+    }
+    
+    .test1 {
+        height: 400px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <UINavigationBar class="app-bar" inline="true">
+            <div m-padding="0 0 0 1" slot="left"></div>
+            <div slot="title">头部</div>
+            <div m-padding="0 2 0 0" slot="right" @click="share" >分享</div>
+        </UINavigationBar>
+        <UIPopup v-show="popup" position="bottom">
+            <UIScroller class="test1" ref="scroll" @load="load" :scrollload="scrollLoad" @refresh="refresh" :canrefresh="fresh">
+                <div m-role="split"></div>
+                <div @click="popup=!popup" m-role="UIButton" m-size="min" m-style="style-2">
+                    close
+                </div>
+                  <UITableView>
+                <UITableViewItem type="arrow" v-for="item in fundList">
+                    <div m-layout="fit" v-text="item.fundname"></div>
+                </UITableViewItem>
+            </UITableView>
+               
+            </UIScroller>
+        </UIPopup>
+        <!-- Slider main container -->
+        <div class="swiper-container" id="banner">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide" v-for="item in ads">
+                    <img :data-src="item.pic_url" class="swiper-lazy" width="100%">
+                    <div class="swiper-lazy-preloader "></div>
+                    <!--  <UIImg :src="item.pic_url" width="100%" defaultsrc="../images/640x320.png"></UIImg> -->
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+        <UITableView>
+            <UITableViewItem>
+                <UITextField m-layout="fit"  type="text" v-model="t"></UITextField>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UITextField m-layout="fit" placeholder="电话" type="tel" v-model="t"></UITextField>
+            </UITableViewItem>
+
+             <UITableViewItem>
+                <UITextField m-layout="fit" placeholder="数字" type="number" v-model="t"></UITextField>
+            </UITableViewItem>
+            
+             <UITableViewItem>
+                <UIDateField m-layout="fit" v-model="date"  placeholder="请选择日期"></UIDateField>
+            </UITableViewItem>
+              <UITableViewItem>
+                <UIButton @click="showloading" m-size="min"  m-style="style-2">显示loading</UIButton>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UISelectField v-model="se" :options="options" @change="selectChange"></UISelectField>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UISwitch v-model="ck">确定</UISwitch>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UIRadio m-value="1" v-model="sex">男</UIRadio>
+                <UIRadio m-value="2" v-model="sex">女</UIRadio>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UICheckBox m-value="1" name="a" v-model="sure">确定</UICheckBox>
+            </UITableViewItem>
+        </UITableView>
+        <UICollapsible>
+            <UICollapsibleItem v-for="item in options">
+                <div slot="title">{{item.text}}</div>
+                <div slot="content">{{item.value}}</div>
+            </UICollapsibleItem>
+        </UICollapsible>
+        <UISegment m-layout="fit" :segment="segment" v-model="segmentActive"></UISegment>
+        <div v-show="segmentActive==segment[0].id">
+            <div m-role="split"></div>
+            <UIButton @click="getdata"  m-style="style-2">
+                加载列表数据
+            </UIButton>
+            <div m-role="split"></div>
+            <UITableView>
+                <UITableViewItem type="arrow" v-for="item in fundList">
+                    <div m-layout="fit" v-text="item.fundname"></div>
+                </UITableViewItem>
+            </UITableView>
+        </div>
+        <div v-show="segmentActive==segment[1].id">
+            JAVASCRIPT Content
+        </div>
+        <div v-show="segmentActive==segment[2].id">
+            HTML Content
+        </div>
+        <UIBottomBar>
+            <uibottomtabbar active="1">
+            </uibottomtabbar>
+        </UIBottomBar>
+    </div>
+</body>
+
+</html>

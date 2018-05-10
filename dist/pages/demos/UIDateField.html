@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>日期框</title>
+    <style type="text/css"></style>
+    <script type="text/javascript" src="../../js/require.js" data-main="../../js/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/hundsun.mobile.ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="demo.css" />
+    <style type="text/css">
+   .value{}
+    </style>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+       
+
+         <UINavigationBar>
+            <div slot="left">
+                <a href="demo.html" class="back-link" m-role="cell" m-valign="middle" ><i class="back"></i>返回</a>
+            </div>
+            <div slot="title">日期框</div>
+        </UINavigationBar>
+
+        <UITableView>
+             <UITableViewItem>
+                 <UIDateField m-layout="fit" v-model="datemin"  min="2017-01-01" placeholder="选择最小日期为2017-01-01"></UIDateField>
+            </UITableViewItem>
+
+             <UITableViewItem>
+                 <UIDateField m-layout="fit" v-model="datemax"  max="2018-12-01" placeholder="选择最大日期为2018-12-01"></UIDateField>
+            </UITableViewItem>
+            <UITableViewItem>
+                 <UIDateField m-layout="fit" v-model="date"  placeholder="请选择日期"></UIDateField>
+            </UITableViewItem>
+            <UITableViewItem>
+                <UIDateField m-layout="fit" preset="time" v-model="time"  placeholder="请选择时间"></UIDateField>
+            </UITableViewItem>
+
+           
+            
+            
+        </UITableView>
+
+        <div m-role="split"></div>
+
+         <UIButton @click="setdate"  m-style="style-2">
+                设置日期为2017-09-18
+        </UIButton>
+
+        <div m-role="split"></div>
+        <div m-padding='0 2 0 2' class="value">
+            日期:<span>{{date}}</span><br/>
+            时间:<span>{{time}}</span><br/>
+            
+        </div>
+      
+    </div>
+</body>
+
+</html>

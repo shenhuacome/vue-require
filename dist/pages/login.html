@@ -1,0 +1,67 @@
+<UIPopup v-show="visible" position="bottom" class="login-UIPopup"> 
+	
+		<div m-role="login">
+  	  <UINavigationBar>
+            <div m-padding="0 0 0 1" slot="left">
+            	<div m-size="min" m-role="UIButton" m-href="" id="backBtn" @click="hidelogin">
+						<i class="icon icon-go-back"></i>
+					</div>
+            </div>
+            <div slot="title">登录</div>
+            <div m-padding="0 2 0 0" slot="right" >
+            	你好啊
+            </div>
+        </UINavigationBar>
+
+        <uiscroller class="login-scroller" >
+        <div class="e-logo " m-role="cell" m-align="center" >
+		<img src="http://tradetest3.xqfunds.com/images/xq-logo.jpg" width="145">
+	</div>
+	 <UITableView>
+            <UITableViewItem>
+                
+				<div m-role="cell" m-align="left" class="font-15 m-color-1 input-word" m-valign="middle">账号</div>
+				<div m-role="cell" m-layout="fit">
+
+				<UITextField m-layout="fit"  type="text" v-model="phone" placeholder="请输入手机号或证件号" ></UITextField>
+					
+				</div>
+				<div m-role="cell" class="change-type" id="selectCertBtn">
+					<i class="down-icon"></i>
+				</div>
+			
+            </UITableViewItem>
+             <UITableViewItem>
+                
+	
+				<div m-role="cell" m-align="left" class="font-15 m-color-1 input-word" m-valign="middle">密码</div>
+				<div m-role="cell" m-layout="fit">
+					<UITextField m-layout="fit"  type="password" v-model="pass" placeholder="请输入登录密码" ></UITextField>
+					
+				</div>
+				<div m-role="cell" class="psw-visible">
+					<div class="psw-visible-ico"></div>
+				</div>
+	
+			
+            </UITableViewItem>
+        </UITableView>
+        <div m-role="cell" m-mode="x-equal" m-layout="fit" style="padding: 0 0.3rem">
+		<div m-role="cell" class="font-12 m-color-1">
+			<div m-role="cell" m-valign="middle">
+			<UICheckBox m-value="1" name="a" v-model="rem">记住账号</UICheckBox>
+			</div>
+		
+		</div>
+		<div m-role="cell" m-href="forget-password-init.html" m-align="right" m-valign="middle" class="font-12 m-color-6">
+			忘记密码?
+		</div>
+	</div>
+
+	<div m-role="UIButton" m-layout="fit" m-style="style-6" id="loginButton" style="height: 0.8rem">登&nbsp;&nbsp;录</div>
+		</uiscroller>
+</div>
+
+	
+</UIPopup>
+

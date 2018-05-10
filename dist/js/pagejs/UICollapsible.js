@@ -1,0 +1,1 @@
+﻿define(["vue"],function(a){new a({el:"#app",data:{options:[{text:"One",value:"A"},{text:"Two",value:"B"},{text:"Three",value:"C"}]},created:function(){},watch:{},computed:{},mounted:function(){},methods:{change:function(c){var b=c?"展开":"收起";this.toast.show(b)}}})});
