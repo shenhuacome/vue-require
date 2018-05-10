@@ -41,6 +41,6 @@
 .bank-logo.bank-baijinns{background-position: 0 -200px;}
 
 
-.bank-logo-scale{transform: scale(.7);}
+.bank-logo-scale{-webkit-transform: scale(.7);transform: scale(.7);}
 
 
